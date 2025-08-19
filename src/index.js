@@ -45,12 +45,13 @@ client.on(Events.MessageCreate, async (message) => {
 
     // Panel Nequi
     if (message.content === ",") {
-        await message.delete();
         
         if (!message.member.roles.cache.some(r => r.name === "Staff")) {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
-
+        
+        await message.delete();
+        
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago - Nequi")
             .addFields(
@@ -64,11 +65,11 @@ client.on(Events.MessageCreate, async (message) => {
 
     // Panel Ualá
     if (message.content === ".") {
-        await message.delete();
-
         if (!message.member.roles.cache.some(r => r.name === "Staff")) {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
+        
+        await message.delete();
         
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago - Ualá")
@@ -84,11 +85,11 @@ client.on(Events.MessageCreate, async (message) => {
 
     // Panel Mensaje grande
     if (message.content === "msg") {
-        await message.delete();
-
         if (!message.member.roles.cache.some(r => r.name === "Staff")) {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
+        
+        await message.delete();
 
         const embed = new EmbedBuilder()
             .setTitle("🎉 Robux enviados")
