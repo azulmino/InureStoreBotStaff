@@ -43,14 +43,13 @@ client.once(Events.ClientReady, bot => {
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
 
-    // ✅ Verificar que tenga el rol Staff
-    if (!message.member.roles.cache.some(r => r.name === "Staff")) {
-        return message.reply("🚫 No tenés permiso para usar este comando.");
-    }
-
     // Panel Nequi
     if (message.content === ",") {
         await message.delete();
+        
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
 
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago - Nequi")
@@ -67,6 +66,10 @@ client.on(Events.MessageCreate, async (message) => {
     if (message.content === ".") {
         await message.delete();
 
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+        
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago - Ualá")
             .addFields(
@@ -82,6 +85,10 @@ client.on(Events.MessageCreate, async (message) => {
     // Panel Mensaje grande
     if (message.content === "msg") {
         await message.delete();
+
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
 
         const embed = new EmbedBuilder()
             .setTitle("🎉 Robux enviados")
