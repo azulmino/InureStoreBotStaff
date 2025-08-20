@@ -214,14 +214,12 @@ client.on(Events.MessageCreate, async (message) => {
 
         await message.channel.send({ embeds: [embed] });
     }
-});
-
-// Respuesta rápida 1
+        // Respuesta rápida 1
     if (message.content === "1") {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Robux mediante Gamepass :Robux:1322010641380278283 , excelente a:Confirmed:1322008031919083571\n¿Cuántos Robux quieres comprar?`
+            `Seleccionaste Robux mediante Gamepass<:Robux:1322010641380278283> , excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux quieres comprar?`
         );
     }
 
@@ -230,7 +228,7 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Robux mediante Grupo :Robux:1322010641380278283, excelente a:Confirmed:1322008031919083571\n¿Cuántos Robux queres comprar y tu usuario?`
+            `Seleccionaste Robux mediante Grupo <:Robux:1322010641380278283>, excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux queres comprar y tu usuario?`
         );
     }
 
@@ -239,7 +237,7 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Pase de un juego :DragonWest:1340280182967242774, excelente a:Confirmed:1322008031919083571\n¿Qué juego es y cuantos Robux vale el pase?`
+            `Seleccionaste Pase de un juego <:DragonWest:1340280182967242774> , excelente <a:Confirmed:1322008031919083571>\n¿Qué juego es y cuantos Robux vale el pase?`
         );
     }
 
@@ -248,8 +246,10 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste **Ítem de un juego** :mapache:1393707373108924568, excelente a :Confirmed:1322008031919083571\n¿Qué ítem te interesa y de que juego?`
+            `Seleccionaste **Ítem de un juego** <:mapache:1393707373108924568> , excelente <a:Confirmed:1322008031919083571>\n¿Qué ítem te interesa y de que juego?`
         );
     }
+
+});
 
 client.login(TOKEN);
