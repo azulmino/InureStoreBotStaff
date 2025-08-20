@@ -153,7 +153,7 @@ client.on(Events.MessageCreate, async (message) => {
         await message.delete();
 
         const embed = new EmbedBuilder()
-            .setTitle("📖 Guía de acceso a cuenta Minecraft")
+            .setTitle("📖 Guía de acceso a la cuenta de Minecraft")
             .setDescription(
 `------------------------------------------------------
 ## PASOS PARA INGRESAR EN LA CUENTA
