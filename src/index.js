@@ -155,7 +155,8 @@ client.on(Events.MessageCreate, async (message) => {
         const embed = new EmbedBuilder()
             .setTitle("📖 Guía de acceso a cuenta Minecraft")
             .setDescription(
-`## PASOS PARA INGRESAR EN LA CUENTA
+`------------------------------------------------------
+## PASOS PARA INGRESAR EN LA CUENTA
 1) Ir a https://www.minecraft.net/es-es/login
 2) Click en iniciar sesión con Microsoft
 3) Colocar el Email que te proporcionamos
@@ -166,7 +167,7 @@ client.on(Events.MessageCreate, async (message) => {
 8) Colocar el código que te enviaron a tu Email
 9) Elige una contraseña nueva con la iniciaras sesión
 
----
+------------------------------------------------------
 
 ## ANTES DE INICIAR SESIÓN EN EL LAUNCHER DE MINECRAFT
 1) Ingresar a https://www.minecraft.net/
@@ -176,7 +177,7 @@ client.on(Events.MessageCreate, async (message) => {
 5) Iniciar sesión con la cuenta que te dimos
 6) ¡Listo para jugar!
 
----
+------------------------------------------------------
 
 ## PASOS PARA MODIFICAR EL EMAIL
 1) Ir a https://account.microsoft.com/profile y buscar la sección de Información de cuenta
