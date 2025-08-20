@@ -130,7 +130,7 @@ client.on(Events.MessageCreate, async (message) => {
             .setDescription(
                 "Ya deberías tener los robux pendientes, recordá que tardan de 3 a 7 días en estar disponibles 💗\n\n" +
                 "🔗 [Ver robux pendientes](https://www.roblox.com/es/transactions)\n\n" +
-                "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en <https://discord.com/channels/1193400722906165298/1221518007835168819>\n\n" +
+                "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea** y sin esperar:\n\n" +
                 "Grupo 1: https://www.roblox.com/es/communities/35983303\n" +
                 "Grupo 2: https://www.roblox.com/es/communities/35983311\n" +
