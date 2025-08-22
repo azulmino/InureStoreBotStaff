@@ -136,7 +136,7 @@ client.on(Events.MessageCreate, async (message) => {
                 "Grupo 2: https://www.roblox.com/es/communities/35983311\n" +
                 "Grupo 3: https://www.roblox.com/es/communities/767157499\n" +
                 "Grupo 4: https://www.roblox.com/es/communities/35983320\n" +
-                "Grupo 5: https://www.roblox.com/es/communities/35983302\n" +
+                "Grupo 5: https://www.roblox.com/es/communities/36092526\n" +
                 "Grupo 6: https://www.roblox.com/es/communities/35983328"
             )
             .setColor("Green");
@@ -207,7 +207,7 @@ client.on(Events.MessageCreate, async (message) => {
                 "Grupo 2: https://www.roblox.com/es/communities/35983311\n" +
                 "Grupo 3: https://www.roblox.com/es/communities/767157499\n" +
                 "Grupo 4: https://www.roblox.com/es/communities/35983320\n" +
-                "Grupo 5: https://www.roblox.com/es/communities/35983302\n" +
+                "Grupo 5: https://www.roblox.com/es/communities/36092526\n" +
                 "Grupo 6: https://www.roblox.com/es/communities/35983328"
             )
             .setColor("Green");
