@@ -282,25 +282,18 @@ client.on(Events.MessageCreate, async (message) => {
         );
     }
 
-client.on(Events.MessageCreate, async (message) => {
-    if (message.author.bot) return;
-
-    // ✅ Revisar si el mensaje es uno de los números de gamepass
     if (gamepassRespuestas[message.content]) {
-        const data = gamepassRespuestas[message.content];
-
-        const embed = new EmbedBuilder()
-            .setTitle("🎮 Creación de Gamepass")
-            .setDescription(
-                `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**, ` +
-                `desactivar los precios regionales y enviame la ID del pase 🩷`
-            )
-            .setColor("Green")
-            .setImage(GAMEPASS_IMAGEN);
-
-        return message.reply({ embeds: [embed] });
-    }
-});
+            const data = gamepassRespuestas[message.content];
+            const embed = new EmbedBuilder()
+                .setTitle("🎮 Creación de Gamepass")
+                .setDescription(
+                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**, ` +
+                    `desactivar los precios regionales y enviame la ID del pase 🩷`
+                )
+                .setColor("Green")
+                .setImage(GAMEPASS_IMAGEN);
+            return message.reply({ embeds: [embed] });
+        }
 });
 
 client.login(TOKEN);
