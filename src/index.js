@@ -38,21 +38,21 @@ Grupo 6: https://www.roblox.com/es/communities/35983328 `;
 
     // === Respuestas rápidas Gamepass ===
 const gamepassRespuestas = {
-    "100": { precio: 143, recibes: 100 },
-    "200": { precio: 286, recibes: 200 },
-    "300": { precio: 429, recibes: 300 },
-    "400": { precio: 572, recibes: 400 },
-    "500": { precio: 715, recibes: 500 },
-    "600": { precio: 858, recibes: 600 },
-    "700": { precio: 1000, recibes: 700 },
-    "800": { precio: 1143, recibes: 800 },
-    "900": { precio: 1286, recibes: 900 },
-    "1000": { precio: 1429, recibes: 1000 },
-    "1100": { precio: 1572, recibes: 1100 },
-    "1200": { precio: 1715, recibes: 1200 },
-    "1300": { precio: 1858, recibes: 1300 },
-    "1400": { precio: 2000, recibes: 1400 },
-    "1500": { precio: 2143, recibes: 1500 }
+    "100t": { precio: 143, recibes: 100 },
+    "200t": { precio: 286, recibes: 200 },
+    "300t": { precio: 429, recibes: 300 },
+    "400t": { precio: 572, recibes: 400 },
+    "500t": { precio: 715, recibes: 500 },
+    "600t": { precio: 858, recibes: 600 },
+    "700t": { precio: 1000, recibes: 700 },
+    "800t": { precio: 1143, recibes: 800 },
+    "900t": { precio: 1286, recibes: 900 },
+    "1000t": { precio: 1429, recibes: 1000 },
+    "1100t": { precio: 1572, recibes: 1100 },
+    "1200t": { precio: 1715, recibes: 1200 },
+    "1300t": { precio: 1858, recibes: 1300 },
+    "1400t": { precio: 2000, recibes: 1400 },
+    "1500t": { precio: 2143, recibes: 1500 }
 };
 
 // 📌 Imagen que me pasaste (link de Discord directo al archivo)
@@ -287,7 +287,8 @@ client.on(Events.MessageCreate, async (message) => {
             const embed = new EmbedBuilder()
                 .setTitle("🎮 Creación de Gamepass")
                 .setDescription(
-                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**, ` +
+                    `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
+                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n\n ` +
                     `desactivar los precios regionales y enviame la ID del pase 🩷`
                 )
                 .setColor("Green")
