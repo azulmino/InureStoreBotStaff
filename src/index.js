@@ -34,6 +34,30 @@ Grupo 3: https://www.roblox.com/es/communities/767157499
 Grupo 4: https://www.roblox.com/es/communities/35983320
 Grupo 5: https://www.roblox.com/es/communities/36092526
 Grupo 6: https://www.roblox.com/es/communities/35983328 `;
+
+
+    // === Respuestas rápidas Gamepass ===
+const gamepassRespuestas = {
+    "100": { precio: 143, recibes: 100 },
+    "200": { precio: 286, recibes: 200 },
+    "300": { precio: 429, recibes: 300 },
+    "400": { precio: 572, recibes: 400 },
+    "500": { precio: 715, recibes: 500 },
+    "600": { precio: 858, recibes: 600 },
+    "700": { precio: 1000, recibes: 700 },
+    "800": { precio: 1143, recibes: 800 },
+    "900": { precio: 1286, recibes: 900 },
+    "1000": { precio: 1429, recibes: 1000 },
+    "1100": { precio: 1572, recibes: 1100 },
+    "1200": { precio: 1715, recibes: 1200 },
+    "1300": { precio: 1858, recibes: 1300 },
+    "1400": { precio: 2000, recibes: 1400 },
+    "1500": { precio: 2143, recibes: 1500 }
+};
+
+// 📌 Imagen que me pasaste (link de Discord directo al archivo)
+const GAMEPASS_IMAGEN = "https://cdn.discordapp.com/attachments/1193400722906165298/1281716002119483392/gamepass.png";
+
 // =======================================================
 
 client.once(Events.ClientReady, bot => {
@@ -219,7 +243,9 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Robux mediante Gamepass<:Robux:1322010641380278283> , excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux quieres comprar?`
+            `Seleccionaste Robux mediante Gamepass<:Robux:1322010641380278283> , excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux quieres comprar?\n\n` +
+                `💬 **Un staff te atenderá** por favor ten paciencia porque hay mucha gente 🙏, ` +
+                `mientras tanto responde la pregunta que te hicimos 📝`
         );
     }
 
@@ -228,7 +254,9 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Robux mediante Grupo <:Robux:1322010641380278283>, excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux queres comprar y tu usuario?`
+            `Seleccionaste Robux mediante Grupo <:Robux:1322010641380278283>, excelente <a:Confirmed:1322008031919083571>\n¿Cuántos Robux queres comprar y tu usuario?\n\n` +
+                `💬 **Un staff te atenderá** por favor ten paciencia porque hay mucha gente 🙏, ` +
+                `mientras tanto responde la pregunta que te hicimos 📝`
         );
     }
 
@@ -237,7 +265,9 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Pase de un juego <:DragonWest:1340280182967242774> , excelente <a:Confirmed:1322008031919083571>\n¿Qué juego es y cuantos Robux vale el pase?`
+            `Seleccionaste Pase de un juego <:DragonWest:1340280182967242774> , excelente <a:Confirmed:1322008031919083571>\n¿Qué juego es y cuantos Robux vale el pase?\n\n` +
+                `💬 **Un staff te atenderá** por favor ten paciencia porque hay mucha gente 🙏, ` +
+                `mientras tanto responde la pregunta que te hicimos 📝`
         );
     }
 
@@ -246,10 +276,31 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste **Ítem de un juego** <:mapache:1393707373108924568> , excelente <a:Confirmed:1322008031919083571>\n¿Qué ítem te interesa y de que juego?`
+            `Seleccionaste **Ítem de un juego** <:mapache:1393707373108924568> , excelente <a:Confirmed:1322008031919083571>\n¿Qué ítem te interesa y de que juego?\n\n` +
+                `💬 **Un staff te atenderá** por favor ten paciencia porque hay mucha gente 🙏, ` +
+                `mientras tanto responde la pregunta que te hicimos 📝`
         );
     }
 
+client.on(Events.MessageCreate, async (message) => {
+    if (message.author.bot) return;
+
+    // ✅ Revisar si el mensaje es uno de los números de gamepass
+    if (gamepassRespuestas[message.content]) {
+        const data = gamepassRespuestas[message.content];
+
+        const embed = new EmbedBuilder()
+            .setTitle("🎮 Creación de Gamepass")
+            .setDescription(
+                `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**, ` +
+                `desactivar los precios regionales y enviame la ID del pase 🩷`
+            )
+            .setColor("Green")
+            .setImage(GAMEPASS_IMAGEN);
+
+        return message.reply({ embeds: [embed] });
+    }
+});
 });
 
 client.login(TOKEN);
