@@ -292,7 +292,7 @@ client.on(Events.MessageCreate, async (message) => {
                     `desactivar los precios regionales y enviame la ID del pase 🩷`
                 )
                 .setColor("Green")
-                .setImage(GAMEPASS_IMAGEN);
+                .setImage("https://imgur.com/a/tLp1T1I");
             return message.reply({ embeds: [embed] });
         }
 });
