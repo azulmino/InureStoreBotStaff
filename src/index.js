@@ -280,23 +280,25 @@ client.on(Events.MessageCreate, async (message) => {
     }
 
     if (gamepassRespuestas[message.content]) {
-        await message.delete();
-            const data = gamepassRespuestas[message.content];
-            
-            const embed = new EmbedBuilder()
-                .setTitle("🎮 Creación de Gamepass")
-                .setDescription(
-                    `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
-                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n ` +
-                    `desactivar los precios regionales y enviame la ID del pase 🩷`
-                )
-                .setColor("Green")
-            // Primero el mensaje con el embed
-        await message.reply({ embeds: [embed] });
+    await message.delete(); // borrar el mensaje del usuario
     
-        // Después la imagen sola
-        await message.channel.send("https://i.imgur.com/XQKOFqy.png");
-        }
+    const data = gamepassRespuestas[message.content];
+
+    const embed = new EmbedBuilder()
+        .setTitle("🎮 Creación de Gamepass")
+        .setDescription(
+            `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
+            `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n ` +
+            `desactivar los precios regionales y enviame la ID del pase 🩷`
+        )
+        .setColor("Green");
+
+    // Enviar embed como mensaje normal (no reply)
+    await message.channel.send({ embeds: [embed] });
+
+    // Después la imagen sola
+    await message.channel.send("https://i.imgur.com/XQKOFqy.png");
+}
 });
 
 client.login(TOKEN);
