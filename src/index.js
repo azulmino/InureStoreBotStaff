@@ -55,9 +55,6 @@ const gamepassRespuestas = {
     "1500t": { precio: 2143, recibes: 1500 }
 };
 
-// 📌 Imagen que me pasaste (link de Discord directo al archivo)
-const GAMEPASS_IMAGEN = "https://cdn.discordapp.com/attachments/1193400722906165298/1281716002119483392/gamepass.png";
-
 // =======================================================
 
 client.once(Events.ClientReady, bot => {
