@@ -293,7 +293,7 @@ client.on(Events.MessageCreate, async (message) => {
         await message.reply({ embeds: [embed] });
     
         // Después la imagen sola
-        await message.channel.send("https://i.imgur.com/sJa1rsX.png");
+        await message.channel.send("https://i.imgur.com/XQKOFqy.png");
         }
 });
 
