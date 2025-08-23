@@ -280,8 +280,9 @@ client.on(Events.MessageCreate, async (message) => {
     }
 
     if (gamepassRespuestas[message.content]) {
+        await message.delete();
             const data = gamepassRespuestas[message.content];
-            await message.delete();
+            
             const embed = new EmbedBuilder()
                 .setTitle("🎮 Creación de Gamepass")
                 .setDescription(
