@@ -285,7 +285,7 @@ client.on(Events.MessageCreate, async (message) => {
                 .setTitle("🎮 Creación de Gamepass")
                 .setDescription(
                     `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
-                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n\n ` +
+                    `Tenes que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n ` +
                     `desactivar los precios regionales y enviame la ID del pase 🩷`
                 )
                 .setColor("Green")
