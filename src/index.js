@@ -289,7 +289,7 @@ client.on(Events.MessageCreate, async (message) => {
                     `desactivar los precios regionales y enviame la ID del pase 🩷`
                 )
                 .setColor("Green")
-                .setImage("https://imgur.com/a/KWlYeU4");
+                .setImage("https://imgur.com/sJa1rsX");
             return message.reply({ embeds: [embed] });
         }
 });
