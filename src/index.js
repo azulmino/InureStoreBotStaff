@@ -131,7 +131,9 @@ client.on(Events.MessageCreate, async (message) => {
             .setTitle("📌 Instrucciones - Roblox")
             .setDescription(
                 "Para continuar por favor indícanos tu usuario y luego de eso entra a nuestro servidor Privado\n\n" +
-                "🔗 https://www.roblox.com/share?code=eca4c368cf44734f920a47a7884a3d28&type=Server"
+                "👇👇" +
+                "🔗 https://www.roblox.com/share?code=eca4c368cf44734f920a47a7884a3d28&type=Server" +
+                "👆👆"
             )
             .setColor("Green");
 
