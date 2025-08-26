@@ -93,7 +93,7 @@ client.on(Events.MessageCreate, async (message) => {
         await message.delete();
         
         const embed = new EmbedBuilder()
-            .setTitle("💳 Datos de pago - Ualá")
+            .setTitle("💳 Datos de pago")
             .addFields(
                 { name: "Alias", value: `\`\`\`${UALA_ALIAS}\`\`\``, inline: false },
                 { name: "CVU", value: `\`\`\`${UALA_CVU}\`\`\``, inline: false },
