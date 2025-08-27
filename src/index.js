@@ -28,17 +28,17 @@ const MSG_GRANDE = `
 
 ❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte Robux de forma instantánea y sin que tengas que esperar
 
-Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n
-https://www.roblox.com/communities/42663812\n\n
-Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n
-https://www.roblox.com/es/communities/35983311\n\n
-YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n
-https://www.roblox.com/es/communities/767157499\n\n
-Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n
-https://www.roblox.com/es/communities/35983320\n\n
-YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n
-https://www.roblox.com/es/communities/36092526\n\n
-Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n
+Random_Groups_32 <:Random_Groups_32:1410209273023041547>
+https://www.roblox.com/communities/42663812\n
+Random_Groups_25 <:Random_Groups_25:1410209519669084184>
+https://www.roblox.com/es/communities/35983311\n
+YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>
+https://www.roblox.com/es/communities/767157499\n
+Random_Groups_26 <:Random_Groups_26:1410209526967304244>
+https://www.roblox.com/es/communities/35983320\n
+YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>
+https://www.roblox.com/es/communities/36092526\n
+Random_Groups_28 <:Random_Groups_28:1410209515629969408>
 https://www.roblox.com/es/communities/35983328\n`;
 
 
