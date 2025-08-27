@@ -28,12 +28,18 @@ const MSG_GRANDE = `
 
 ❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte Robux de forma instantánea y sin que tengas que esperar
 
-Grupo 1: https://www.roblox.com/communities/42663812
-Grupo 2: https://www.roblox.com/es/communities/35983311
-Grupo 3: https://www.roblox.com/es/communities/767157499
-Grupo 4: https://www.roblox.com/es/communities/35983320
-Grupo 5: https://www.roblox.com/es/communities/36092526
-Grupo 6: https://www.roblox.com/es/communities/35983328 `;
+Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n
+https://www.roblox.com/communities/42663812\n\n
+Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n
+https://www.roblox.com/es/communities/35983311\n\n
+YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n
+https://www.roblox.com/es/communities/767157499\n\n
+Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n
+https://www.roblox.com/es/communities/35983320\n\n
+YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n
+https://www.roblox.com/es/communities/36092526\n\n
+Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n
+https://www.roblox.com/es/communities/35983328\n`;
 
 
     // === Respuestas rápidas Gamepass ===
@@ -155,12 +161,18 @@ client.on(Events.MessageCreate, async (message) => {
                 "🔗 [Ver robux pendientes](https://www.roblox.com/es/transactions)\n\n" +
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea** y sin esperar:\n\n" +
-                "Grupo 1: https://www.roblox.com/communities/42663812\n" +
-                "Grupo 2: https://www.roblox.com/es/communities/35983311\n" +
-                "Grupo 3: https://www.roblox.com/es/communities/767157499\n" +
-                "Grupo 4: https://www.roblox.com/es/communities/35983320\n" +
-                "Grupo 5: https://www.roblox.com/es/communities/36092526\n" +
-                "Grupo 6: https://www.roblox.com/es/communities/35983328"
+                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n" +
+                "https://www.roblox.com/communities/42663812\n\n" +
+                "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
+                "https://www.roblox.com/es/communities/35983311\n\n" +
+                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
+                "https://www.roblox.com/es/communities/767157499\n\n" +
+                "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
+                "https://www.roblox.com/es/communities/35983320\n\n" +
+                "YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n" +
+                "https://www.roblox.com/es/communities/36092526\n\n" +
+                "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
+                "https://www.roblox.com/es/communities/35983328\n"
             )
             .setColor("Green");
 
@@ -226,12 +238,18 @@ client.on(Events.MessageCreate, async (message) => {
             .setDescription(
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea**:\n\n" +
-                "Grupo 1: https://www.roblox.com/communities/42663812\n" +
-                "Grupo 2: https://www.roblox.com/es/communities/35983311\n" +
-                "Grupo 3: https://www.roblox.com/es/communities/767157499\n" +
-                "Grupo 4: https://www.roblox.com/es/communities/35983320\n" +
-                "Grupo 5: https://www.roblox.com/es/communities/36092526\n" +
-                "Grupo 6: https://www.roblox.com/es/communities/35983328"
+                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n" +
+                "https://www.roblox.com/communities/42663812\n\n" +
+                "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
+                "https://www.roblox.com/es/communities/35983311\n\n" +
+                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
+                "https://www.roblox.com/es/communities/767157499\n\n" +
+                "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
+                "https://www.roblox.com/es/communities/35983320\n\n" +
+                "YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n" +
+                "https://www.roblox.com/es/communities/36092526\n\n" +
+                "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
+                "https://www.roblox.com/es/communities/35983328\n"
             )
             .setColor("Green");
 
