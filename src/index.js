@@ -358,6 +358,26 @@ client.on(Events.MessageCreate, async (message) => {
 
         await message.channel.send({ embeds: [embed] });
     }
+    // Panel Sab
+    if (message.content === "sab") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+    
+        await message.delete();
+    
+        const embed = new EmbedBuilder()
+            .setTitle("📌 Instrucciones - Roblox")
+            .setDescription(
+                "Para continuar por favor indícanos tu usuario y luego de eso entra a nuestro servidor Privado\n\n" +
+                "👇👇\n\n" +
+                "🔗 https://www.roblox.com/share?code=04b211d27943b34b80b9faec33f20272&type=Server\n\n" +
+                "👆👆"
+            )
+            .setColor("Green");
+    
+        message.channel.send({ embeds: [embed] });
+    }
 
 });
 
