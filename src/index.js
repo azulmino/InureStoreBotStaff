@@ -80,9 +80,9 @@ client.on(Events.MessageCreate, async (message) => {
         await message.delete();
         
         const embed = new EmbedBuilder()
-            .setTitle("💳 Datos de pago - Nequi")
+            .setTitle("💳 Datos de pago")
             .addFields(
-                { name: "CVU", value: `\`\`\`${NEQUI_ALIAS}\`\`\``, inline: false },
+                { name: "Nequi", value: `\`\`\`${NEQUI_ALIAS}\`\`\``, inline: false },
                 { name: "Titular", value: NEQUI_NOMBRE, inline: false }
             )
             .setColor("Green");
@@ -328,9 +328,9 @@ client.on(Events.MessageCreate, async (message) => {
         await message.delete();
 
         const embed = new EmbedBuilder()
-            .setTitle("💳 Datos de pago - Ger Ari - Nequi")
+            .setTitle("💳 Datos de pago")
             .addFields(
-                { name: "CVU", value: `\`\`\`315 789 4382\`\`\``, inline: false },
+                { name: "Nequi", value: `\`\`\`315 789 4382\`\`\``, inline: false },
                 { name: "Titular", value: "**Ger Ari**", inline: false }
             )
             .setColor("Green");
