@@ -319,6 +319,46 @@ client.on(Events.MessageCreate, async (message) => {
     // Después la imagen sola
     await message.channel.send("https://i.imgur.com/XQKOFqy.png");
 }
+        // Panel nequi Ger Ari
+    if (message.content === ",g") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        await message.delete();
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago - Ger Ari - Nequi")
+            .addFields(
+                { name: "CVU", value: `\`\`\`315 789 4382\`\`\``, inline: false },
+                { name: "Titular", value: "**Ger Ari**", inline: false }
+            )
+            .setColor("Green");
+
+        message.channel.send({ embeds: [embed] });
+    }
+
+    // Panel Ink
+    if (message.content === "ink") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        await message.delete();
+
+        const embed = new EmbedBuilder()
+            .setTitle("📌 Instrucciones - Roblox")
+            .setDescription(
+                "Para continuar por favor indícanos tu usuario y luego de eso entra a nuestro servidor Privado\n\n" +
+                "👇👇\n\n" +
+                "🔗 https://www.roblox.com/share?code=d65a37392b89064eb3383a7f990bf5f6&type=Server\n\n" +
+                "👆👆"
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+
 });
 
 client.login(TOKEN);
