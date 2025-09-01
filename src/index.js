@@ -82,7 +82,7 @@ client.on(Events.MessageCreate, async (message) => {
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago - Nequi")
             .addFields(
-                { name: "Alias", value: `\`\`\`${NEQUI_ALIAS}\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`${NEQUI_ALIAS}\`\`\``, inline: false },
                 { name: "Titular", value: NEQUI_NOMBRE, inline: false }
             )
             .setColor("Green");
