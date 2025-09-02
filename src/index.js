@@ -2,15 +2,10 @@ const {
     Client,
     GatewayIntentBits,
     Events,
-    ModalBuilder,
-    TextInputBuilder,
-    TextInputStyle,
-    ActionRowBuilder,
-    REST,
-    Routes,
-    SlashCommandBuilder,
     EmbedBuilder,
-    PermissionFlagsBits
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle
 } = require("discord.js");
 require("dotenv").config();
 
@@ -75,28 +70,6 @@ client.once(Events.ClientReady, bot => {
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
 
-    // ==================== GAMEPASS RESPUESTAS ====================
-if (gamepassRespuestas[message.content]) {
-    if (!message.member.roles.cache.some(r => r.name === "Staff")) {
-        return message.reply("🚫 No tenés permiso para usar este comando.");
-    }
-
-    await message.delete(); // Borrar el mensaje del usuario
-    const data = gamepassRespuestas[message.content];
-
-    const embed = new EmbedBuilder()
-        .setTitle("🎮 Creación de Gamepass")
-        .setDescription(
-            `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
-            `Tenés que crear un gamepass de **${data.precio} robux** para que te lleguen **${data.recibes} robux**,\n` +
-            `desactivar los precios regionales y enviame la ID del pase 🩷`
-        )
-        .setColor("Green");
-
-    await message.channel.send({ embeds: [embed] });
-    await message.channel.send("https://i.imgur.com/XQKOFqy.png");
-}
-    
     // Panel Nequi
     if (message.content === ",") {
         
