@@ -5,7 +5,9 @@ const {
     EmbedBuilder,
     ActionRowBuilder,
     ButtonBuilder,
-    ButtonStyle
+    ButtonStyle,
+    SlashCommandBuilder,
+    EmbedBuilder
 } = require("discord.js");
 require("dotenv").config();
 
@@ -66,6 +68,53 @@ const gamepassRespuestas = {
 client.once(Events.ClientReady, bot => {
     console.log(`Bot A conectado como ${bot.user.username}`);
 });
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName("gamepass")
+        .setDescription("Calcula cuánto debe costar un Gamepass según los Robux que quieras recibir")
+        .addIntegerOption(option =>
+            option
+                .setName("robux")
+                .setDescription("Cantidad de Robux que querés recibir (ej: 100, 200, 500)")
+                .setRequired(false)
+        ),
+
+    async execute(interaction) {
+        const robuxDeseados = interaction.options.getInteger("robux");
+
+        // Si no pone un número, mostrar ayuda
+        if (!robuxDeseados) {
+            const embed = new EmbedBuilder()
+                .setTitle("🎮 Cálculo de Gamepass")
+                .setDescription(
+                    "Por favor ingresá la cantidad de Robux que querés recibir.\n\n" +
+                    "Ejemplos rápidos:\n" +
+                    "🔹 100 Robux → Precio: **143**\n" +
+                    "🔹 200 Robux → Precio: **285**\n" +
+                    "🔹 500 Robux → Precio: **715**"
+                )
+                .setColor("Green");
+
+            return interaction.reply({ embeds: [embed], ephemeral: true });
+        }
+
+        // Cálculo
+        const precioGamepass = Math.round(robuxDeseados * 1.43);
+
+        const embed = new EmbedBuilder()
+            .setTitle("🎮 Creación de Gamepass")
+            .setDescription(
+                `Tenés que crear un Gamepass de **${precioGamepass} Robux** para que te lleguen **${robuxDeseados} Robux**.\n\n` +
+                "⚠️ Recordá desactivar los precios regionales y luego enviar la ID del pase 🩷\n\n" +
+                "🔗 [Tutorial aquí](https://discord.com/channels/1193400722906165298/1281716002119483392)"
+            )
+            .setColor("Green");
+
+        await interaction.reply({ embeds: [embed] });
+        await message.channel.send("https://i.imgur.com/XQKOFqy.png");
+    },
+};
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
