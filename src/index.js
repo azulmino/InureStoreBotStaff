@@ -102,7 +102,6 @@ client.once(Events.ClientReady, bot => {
 // ================== MANEJAR EL COMANDO ==================
 client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isCommand()) return;
-    
 
     if (interaction.commandName === "gamepass") {
         const robux = interaction.options.getInteger("robux");
@@ -122,25 +121,19 @@ client.on(Events.InteractionCreate, async (interaction) => {
             default: total = Math.round(robux / 0.7);
         }
 
-        //const data = gamepassRespuestas[message.content];
+        const embed = new EmbedBuilder()
+            .setTitle("🎮 Creación de Gamepass")
+            .setDescription(
+                `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
+                `Tenés que crear un gamepass de **${total} Robux** para que te lleguen **${robux} Robux**,\n` +
+                `desactivar los precios regionales y enviarme la ID del pase 🩷`
+            )
+            .setColor("Green");
 
-            const embed = new EmbedBuilder()
-                .setTitle("🎮 Creación de Gamepass")
-                .setDescription(
-                    `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
-                    `Tenes que crear un gamepass de **${robux} robux** para que te lleguen **${total} robux**,\n ` +
-                    `desactivar los precios regionales y enviame la ID del pase 🩷`
-                )
-                .setColor("Green");
-        
-            // Enviar embed como mensaje normal (no reply)
-            await message.channel.send({ embeds: [embed] });
-        
-            // Después la imagen sola
-            await message.channel.send("https://i.imgur.com/XQKOFqy.png");
-        }
-        }
-    });
+        await interaction.reply({ embeds: [embed] });
+        await interaction.followUp("https://i.imgur.com/XQKOFqy.png");
+    }
+});
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
