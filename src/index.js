@@ -126,7 +126,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
             .setDescription(
                 `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
                 `Tenés que crear un gamepass de **${total} Robux** para que te lleguen **${robux} Robux**,\n` +
-                `desactivar los precios regionales y enviarme la ID del pase 🩷`
+                `desactivar los precios regionales y enviame la ID del pase 🩷`
             )
             .setColor("Green");
 
