@@ -104,7 +104,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isCommand()) return;
 
     if (interaction.commandName === "gamepass") {
-            // 👇 Cambiá "Staff" por el nombre EXACTO del rol
+        // 👇 Cambiá "Staff" por el nombre EXACTO del rol
             const staffRole = interaction.guild.roles.cache.find(r => r.name === "Staff");
     
             if (!interaction.member.roles.cache.has(staffRole.id)) {
@@ -112,9 +112,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
                     content: "🚫 Solo el **Staff** puede usar este comando.",
                     ephemeral: true // Solo el usuario ve este mensaje
                 });
-            }
-
-    if (interaction.commandName === "gamepass") {
         const robux = interaction.options.getInteger("robux");
         let total;
 
