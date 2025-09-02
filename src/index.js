@@ -122,7 +122,23 @@ client.on(Events.InteractionCreate, async (interaction) => {
             default: total = Math.round(robux / 0.7);
         }
 
-        await interaction.reply(`Para recibir **${robux} Robux**, necesitas hacer un pase de **${total} Robux**.`);
+        //const data = gamepassRespuestas[message.content];
+
+            const embed = new EmbedBuilder()
+                .setTitle("🎮 Creación de Gamepass")
+                .setDescription(
+                    `https://discord.com/channels/1193400722906165298/1281716002119483392\n\n` +
+                    `Tenes que crear un gamepass de **${robux} robux** para que te lleguen **${total} robux**,\n ` +
+                    `desactivar los precios regionales y enviame la ID del pase 🩷`
+                )
+                .setColor("Green");
+        
+            // Enviar embed como mensaje normal (no reply)
+            await message.channel.send({ embeds: [embed] });
+        
+            // Después la imagen sola
+            await message.channel.send("https://i.imgur.com/XQKOFqy.png");
+        }
         }
     });
 
