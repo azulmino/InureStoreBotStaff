@@ -123,6 +123,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         }
 
         await interaction.reply(`Para recibir **${robux} Robux**, necesitas hacer un pase de **${total} Robux**.`);
+        }
     });
 
 client.on(Events.MessageCreate, async (message) => {
