@@ -87,7 +87,7 @@ const rest = new REST({ version: "10" }).setToken(TOKEN);
 (async () => {
   try {
     console.log("⏳ Registrando comandos...");
-    await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: commands });
+    await rest.put(Routes.applicationGuildCommands(GUILD_ID), { body: commands });
     console.log("✅ Comando registrado");
   } catch (error) {
     console.error(error);
