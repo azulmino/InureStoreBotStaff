@@ -6,8 +6,7 @@ const {
     ActionRowBuilder,
     ButtonBuilder,
     ButtonStyle,
-    SlashCommandBuilder,
-    EmbedBuilder
+    SlashCommandBuilder
 } = require("discord.js");
 require("dotenv").config();
 
