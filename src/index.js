@@ -74,52 +74,56 @@ client.once(Events.ClientReady, bot => {
 // ================== REGISTRAR COMANDO ==================
 const commands = [
   new SlashCommandBuilder()
-    .setName("gamepass")
-    .setDescription("Calcula el precio de un gamepass según Robux ingresados")
-    .addIntegerOption(option =>
-      option.setName("robux")
-        .setDescription("Cantidad de Robux")
-        .setRequired(false)
-    )
+        .setName("gamepass")
+        .setDescription("Calcula el precio de Robux incluyendo el 30% adicional para el Gamepass")
+        .addIntegerOption(option =>
+            option.setName("robux")
+                .setDescription("Cantidad de Robux")
+                .setRequired(true)
+        )
 ].map(cmd => cmd.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(TOKEN);
 
 (async () => {
-  try {
-    console.log("⏳ Registrando comandos...");
-    await rest.put(Routes.applicationGuildCommands(CLIENT_ID), { body: commands });
-    console.log("✅ Comando registrado");
-  } catch (error) {
-    console.error(error);
-  }
+    try {
+        console.log("Registrando comandos...");
+        await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
+        console.log("¡Comandos registrados con éxito!");
+    } catch (error) {
+        console.error(error);
+    }
 })();
 
+client.once(Events.ClientReady, bot => {
+    console.log(`Bot cliente conectado como ${bot.user.username}`);
+});
+
 // ================== MANEJAR EL COMANDO ==================
-client.on("ready", () => {
-  console.log(`Bot conectado como ${client.user.tag}`);
-});
+client.on(Events.InteractionCreate, async (interaction) => {
+    if (!interaction.isCommand()) return;
+    
 
-client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
+    if (interaction.commandName === "gamepass") {
+        const robux = interaction.options.getInteger("robux");
+        let total;
 
-  if (interaction.commandName === "gamepass") {
-    const robux = interaction.options.getInteger("robux") || 100; // default si no ponen nada
-    let precio;
+        switch (robux) {
+            case 700: total = 1000; break;
+            case 1400: total = 2000; break;
+            case 2100: total = 3000; break;
+            case 2800: total = 4000; break;
+            case 3500: total = 5000; break;
+            case 4200: total = 6000; break;
+            case 4900: total = 7000; break;
+            case 5600: total = 8000; break;
+            case 6300: total = 9000; break;
+            case 7000: total = 10000; break;
+            default: total = Math.round(robux / 0.7);
+        }
 
-    // Ejemplo: fórmula básica (podés ajustar los valores como en 100t, 200t, etc.)
-    if (robux === 100) precio = "El gamepass de 100 Robux cuesta 143 Robux.";
-    else if (robux === 200) precio = "El gamepass de 200 Robux cuesta 286 Robux.";
-    else precio = `El gamepass de ${robux} Robux cuesta ${Math.round(robux * 1.43)} Robux.`;
-
-    const embed = new EmbedBuilder()
-      .setTitle("📊 Calculadora de Gamepass")
-      .setDescription(precio)
-      .setColor("Blue");
-
-    await interaction.reply({ embeds: [embed] });
-  }
-});
+        await interaction.reply(`Para recibir **${robux} Robux**, necesitas hacer un pase de **${total} Robux**.`);
+    });
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return;
