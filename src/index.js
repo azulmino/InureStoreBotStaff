@@ -2,10 +2,15 @@ const {
     Client,
     GatewayIntentBits,
     Events,
-    EmbedBuilder,
+    ModalBuilder,
+    TextInputBuilder,
+    TextInputStyle,
     ActionRowBuilder,
-    ButtonBuilder,
-    ButtonStyle
+    REST,
+    Routes,
+    SlashCommandBuilder,
+    EmbedBuilder,
+    PermissionFlagsBits
 } = require("discord.js");
 require("dotenv").config();
 
