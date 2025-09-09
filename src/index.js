@@ -40,8 +40,8 @@ YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>
 https://www.roblox.com/es/communities/767157499\n
 Random_Groups_26 <:Random_Groups_26:1410209526967304244>
 https://www.roblox.com/es/communities/35983320\n
-YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>
-https://www.roblox.com/es/communities/36092526\n
+Random_Groups_37 <:Random_Groups_37:>
+https://www.roblox.com/communities/360267878\n
 Random_Groups_28 <:Random_Groups_28:1410209515629969408>
 https://www.roblox.com/es/communities/35983328\n`;
 
@@ -237,8 +237,8 @@ client.on(Events.MessageCreate, async (message) => {
                 "https://www.roblox.com/es/communities/767157499\n\n" +
                 "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
                 "https://www.roblox.com/es/communities/35983320\n\n" +
-                "YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n" +
-                "https://www.roblox.com/es/communities/36092526\n\n" +
+                "Random_Groups_37 <:Random_Groups_37:>\n" +
+                "https://www.roblox.com/communities/360267878\n\n" +
                 "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
                 "https://www.roblox.com/es/communities/35983328\n"
             )
@@ -314,8 +314,8 @@ client.on(Events.MessageCreate, async (message) => {
                 "https://www.roblox.com/es/communities/767157499\n\n" +
                 "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
                 "https://www.roblox.com/es/communities/35983320\n\n" +
-                "YZC Gaming V0.9 <:YZCsGamingClubV09:1410209716134608916>\n" +
-                "https://www.roblox.com/es/communities/36092526\n\n" +
+                "Random_Groups_37 <:Random_Groups_37:>\n" +
+                "https://www.roblox.com/communities/360267878\n\n" +
                 "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
                 "https://www.roblox.com/es/communities/35983328\n"
             )
@@ -445,6 +445,26 @@ client.on(Events.MessageCreate, async (message) => {
             .setColor("Green");
     
         message.channel.send({ embeds: [embed] });
+    }
+
+    // Panel Naranja
+    if (message.content === ".p") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        await message.delete();
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Alias", value: `\`\`\`inure.rbx\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`4530000800014971297833\`\`\``, inline: false },
+                { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
     }
 
 });
