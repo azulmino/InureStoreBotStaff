@@ -32,17 +32,17 @@ const MSG_GRANDE = `
 
 ❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte Robux de forma instantánea y sin que tengas que esperar
 
-Random_Groups_32 <:Random_Groups_32:1410209273023041547>
-https://www.roblox.com/communities/42663812\n
-Random_Groups_25 <:Random_Groups_25:1410209519669084184>
-https://www.roblox.com/es/communities/35983311\n
-YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>
-https://www.roblox.com/es/communities/767157499\n
-Random_Groups_26 <:Random_Groups_26:1410209526967304244>
-https://www.roblox.com/es/communities/35983320\n
-Random_Groups_37 <:Random_Groups_37:>
+Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **NUEVO GRUPO Agregado 7 de Agosto**
 https://www.roblox.com/communities/360267878\n
-Random_Groups_28 <:Random_Groups_28:1410209515629969408>
+Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **NUEVO GRUPO Agregado 7 de Agosto**
+https://www.roblox.com/communities/42663812\n
+Random_Groups_25 <:Random_Groups_25:1410209519669084184> 
+https://www.roblox.com/es/communities/35983311\n
+YZC Gaming Service V0.1 <:YZCGamingServiceV01:1410209512299954269> 
+https://www.roblox.com/es/communities/767157499\n
+Random_Groups_26 <:Random_Groups_26:1410209526967304244> 
+https://www.roblox.com/es/communities/35983320\n
+Random_Groups_28 <:Random_Groups_28:1410209515629969408> 
 https://www.roblox.com/es/communities/35983328\n`;
 
 
@@ -229,16 +229,16 @@ client.on(Events.MessageCreate, async (message) => {
                 "🔗 [Ver robux pendientes](https://www.roblox.com/es/transactions)\n\n" +
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea** y sin esperar:\n\n" +
-                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n" +
+                "Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **NUEVO GRUPO Agregado 7 de Agosto**\n" +
+                "https://www.roblox.com/communities/360267878\n\n" +
+                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **NUEVO GRUPO Agregado 7 de Agosto**\n" +
                 "https://www.roblox.com/communities/42663812\n\n" +
                 "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
                 "https://www.roblox.com/es/communities/35983311\n\n" +
-                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
+                "YZC Gaming Service V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
                 "https://www.roblox.com/es/communities/767157499\n\n" +
                 "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
                 "https://www.roblox.com/es/communities/35983320\n\n" +
-                "Random_Groups_37 <:Random_Groups_37:>\n" +
-                "https://www.roblox.com/communities/360267878\n\n" +
                 "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
                 "https://www.roblox.com/es/communities/35983328\n"
             )
@@ -306,16 +306,16 @@ client.on(Events.MessageCreate, async (message) => {
             .setDescription(
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea**:\n\n" +
-                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>\n" +
+                "Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **NUEVO GRUPO Agregado 7 de Agosto**\n" +
+                "https://www.roblox.com/communities/360267878\n\n" +
+                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **NUEVO GRUPO Agregado 7 de Agosto**\n" +
                 "https://www.roblox.com/communities/42663812\n\n" +
                 "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
                 "https://www.roblox.com/es/communities/35983311\n\n" +
-                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
+                "YZC Gaming Service V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
                 "https://www.roblox.com/es/communities/767157499\n\n" +
                 "Random_Groups_26 <:Random_Groups_26:1410209526967304244>\n" +
                 "https://www.roblox.com/es/communities/35983320\n\n" +
-                "Random_Groups_37 <:Random_Groups_37:>\n" +
-                "https://www.roblox.com/communities/360267878\n\n" +
                 "Random_Groups_28 <:Random_Groups_28:1410209515629969408>\n" +
                 "https://www.roblox.com/es/communities/35983328\n"
             )
