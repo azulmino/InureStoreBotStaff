@@ -470,6 +470,25 @@ client.on(Events.MessageCreate, async (message) => {
         await message.channel.send({ embeds: [embed] });
     }
 
+// Panel nequi sam
+    if (message.content === ",s") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        await message.delete();
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Nequi", value: `\`\`\`314 828 0404\`\`\``, inline: false },
+                { name: "Titular", value: "**Sam Mon**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+
 });
 
 client.login(TOKEN);
