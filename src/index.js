@@ -501,7 +501,7 @@ client.on(Events.MessageCreate, async (message) => {
             .setTitle("💳 Datos de pago")
             .addFields(
                 { name: "Clave", value: `\`\`\`710969000052673049\`\`\``, inline: false },
-                { name: "Banco", value: `\`\`\`Nvio\`\`\``, inline: false },
+                { name: "Banco", value: "Nvio", inline: false },
                 { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
             )
             .setColor("Green");
