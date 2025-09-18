@@ -353,7 +353,7 @@ client.on(Events.MessageCreate, async (message) => {
         if (["1221516369321791528", "1378056887068528710"].includes(message.channel.id)) return;
 
         await message.channel.send(
-            `Seleccionaste Pase de un juego <:DragonWest:1340280182967242774> , excelente <a:Confirmed:1322008031919083571>\n¿Qué juego es y cuantos Robux vale el pase?\n\n` +
+            `Seleccionaste Pase de un juego :DragonWest: , excelente <a:Confirmed:1322008031919083571>\n¿Qué juego es y cuantos Robux vale el pase?\n\n` +
                 `💬 **Un staff te atenderá** por favor ten paciencia porque hay mucha gente 🙏, ` +
                 `mientras tanto responde la pregunta que te hicimos 📝`
         );
@@ -483,6 +483,26 @@ client.on(Events.MessageCreate, async (message) => {
             .addFields(
                 { name: "Nequi", value: `\`\`\`314 828 0404\`\`\``, inline: false },
                 { name: "Titular", value: "**Sam Mon**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+
+// Panel pago mexico
+    if (message.content === "-c") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        await message.delete();
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Clave", value: `\`\`\`710969000052673049\`\`\``, inline: false },
+                { name: "Banco", value: `\`\`\`Nvio\`\`\``, inline: false },
+                { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
             )
             .setColor("Green");
 
