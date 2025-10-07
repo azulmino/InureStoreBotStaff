@@ -1,1 +1,2 @@
-⚠️ Este es uno de los 2 alias que estamos usando, si envías a cualquier otro alias el dinero se perderá
+https://www.roblox.com/communities/661195437
+<:Random_Groups_44:1424927593445982361>
