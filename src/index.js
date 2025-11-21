@@ -13,7 +13,7 @@ const {
 require("dotenv").config();
 
 const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
+    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers]
 });
 
 const TOKEN = process.env.TOKEN;
@@ -23,30 +23,16 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const NEQUI_ALIAS = "3164381003"; 
 const NEQUI_NOMBRE = "**Mig Pel.**"; 
 
-const UALA_ALIAS = "inure.ar.uala";
-const UALA_CVU = "0000007900204470190791";
-const UALA_NOMBRE = "**Mateo Valentin Lauman**"; 
-
 const MSG_GRANDE = `
 🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819
 
 ❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte Robux de forma instantánea y sin que tengas que esperar
 
-Random_Groups_38 <:Random_Groups_38:1416258293302820884>  **Nuevo Grupo** ✅ 
-Agregado 13 de Septiembre 📆
-https://www.roblox.com/communities/559579935\n
-Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **Nuevo Grupo** ✅ 
-Agregado 7 de Septiembre 📆
-https://www.roblox.com/communities/360267878\n
-Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **Nuevo Grupo** ✅ 
-Agregado 27 de Agosto 📆
-https://www.roblox.com/communities/42663812\n
-Random_Groups_28 <:Random_Groups_28:1410209515629969408> **Nuevo Grupo**
-https://www.roblox.com/communities/35983328\n
-YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269> 
-https://www.roblox.com/es/communities/767157499\n
-Random_Groups_25 <:Random_Groups_25:1410209519669084184>
-https://www.roblox.com/es/communities/35983311\n`;
+Random_Groups_49 <:Random_Groups_49:1438685066900406354> Nuevo Grupo Agregado 13 de Noviembre 📆
+https://www.roblox.com/es/communities/332829485\n
+
+Random_Groups_46 <:Random_Groups_46:1429985427774767164> Nuevo Grupo Agregado 20 de Octubre 📆
+https://www.roblox.com/es/communities/924449130\n`;
 
 
     // === Respuestas rápidas Gamepass ===
@@ -111,7 +97,19 @@ client.on(Events.InteractionCreate, async (interaction) => {
         let total;
 
         switch (robux) {
+            case 100: total = 143; break;
+            case 200: total = 286; break;
+            case 300: total = 429; break;
+            case 400: total = 572; break;
+            case 500: total = 715; break;
+            case 600: total = 858; break;
             case 700: total = 1000; break;
+            case 800: total = 1143; break;
+            case 900: total = 1286; break;
+            case 1000: total = 1429; break;
+            case 1100: total = 1572; break;
+            case 1200: total = 1715; break;
+            case 1300: total = 1858; break;
             case 1400: total = 2000; break;
             case 2100: total = 3000; break;
             case 2800: total = 4000; break;
@@ -148,7 +146,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
         
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
         
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago")
@@ -161,25 +165,6 @@ client.on(Events.MessageCreate, async (message) => {
         message.channel.send({ embeds: [embed] });
     }
 
-    // Panel Ualá
-    if (message.content === ".") {
-        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
-            return message.reply("🚫 No tenés permiso para usar este comando.");
-        }
-        
-        await message.delete();
-        
-        const embed = new EmbedBuilder()
-            .setTitle("💳 Datos de pago")
-            .addFields(
-                { name: "Alias", value: `\`\`\`${UALA_ALIAS}\`\`\``, inline: false },
-                { name: "CVU", value: `\`\`\`${UALA_CVU}\`\`\``, inline: false },
-                { name: "Titular", value: UALA_NOMBRE, inline: false }
-            )
-            .setColor("Green");
-
-       message.channel.send({ embeds: [embed] });
-    }
 
     // Panel Mensaje grande
     if (message.content === "msg") {
@@ -187,7 +172,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
         
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
 
         const embed = new EmbedBuilder()
             .setTitle("🎉 Robux enviados")
@@ -202,7 +193,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
 
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
 
         const embed = new EmbedBuilder()
             .setTitle("📌 Instrucciones - Roblox")
@@ -223,7 +220,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
 
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
 
         const embed = new EmbedBuilder()
             .setTitle("💎 Robux Pendientes")
@@ -232,18 +235,10 @@ client.on(Events.MessageCreate, async (message) => {
                 "🔗 [Ver robux pendientes](https://www.roblox.com/es/transactions)\n\n" +
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea** y sin esperar:\n\n" +
-                "Random_Groups_38 <:Random_Groups_38:1416258293302820884>  **Nuevo Grupo** ✅ Agregado 13 de Septiembre 📆\n" +
-                "https://www.roblox.com/communities/559579935\n\n" +
-                "Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **Nuevo Grupo** ✅ Agregado 7 de Septiembre 📆\n" +
-                "https://www.roblox.com/communities/360267878\n\n" +
-                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **Nuevo Grupo** ✅ Agregado 27 de Agosto 📆\n" +
-                "https://www.roblox.com/communities/42663812\n\n" +
-                "Random_Groups_28 <:Random_Groups_28:1410209515629969408> **Nuevo Grupo**\n" +
-                "https://www.roblox.com/communities/35983328\n\n" +
-                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
-                "https://www.roblox.com/es/communities/767157499\n\n" +
-                "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
-                "https://www.roblox.com/es/communities/35983311\n"
+                "Random_Groups_49 <:Random_Groups_49:1438685066900406354> Nuevo Grupo Agregado 13 de Noviembre 📆\n"+
+                "https://www.roblox.com/es/communities/332829485 \n\n" +
+                "Random_Groups_46 <:Random_Groups_46:1429985427774767164> Nuevo Grupo Agregado 20 de Octubre 📆\n"+
+                 "https://www.roblox.com/es/communities/924449130\n"
             )
             .setColor("Green");
 
@@ -309,18 +304,10 @@ client.on(Events.MessageCreate, async (message) => {
             .setDescription(
                 "🩷 Muchas gracias por tu compra, te agradecería que dejes tu reseña en https://discord.com/channels/1193400722906165298/1221518007835168819\n\n" +
                 "❕ También te pedimos que te unas a nuestros grupos de Roblox ya que si estas por 14 días podremos enviarte **Robux de forma instantánea**:\n\n" +
-                "Random_Groups_38 <:Random_Groups_38:1416258293302820884>  **Nuevo Grupo** ✅ Agregado 13 de Septiembre 📆\n" +
-                "https://www.roblox.com/communities/559579935\n\n" +
-                "Random_Groups_37 <:Random_Groups_37:1414196988014235739>  **Nuevo Grupo** ✅ Agregado 7 de Septiembre 📆\n" +
-                "https://www.roblox.com/communities/360267878\n\n" +
-                "Random_Groups_32 <:Random_Groups_32:1410209273023041547>  **Nuevo Grupo** ✅ Agregado 27 de Agosto 📆\n" +
-                "https://www.roblox.com/communities/42663812\n\n" +
-                "Random_Groups_28 <:Random_Groups_28:1410209515629969408> **Nuevo Grupo**\n" +
-                "https://www.roblox.com/communities/35983328\n\n" +
-                "YZC Gaming V0.1 <:YZCGamingServiceV01:1410209512299954269>\n" +
-                "https://www.roblox.com/es/communities/767157499\n\n" +
-                "Random_Groups_25 <:Random_Groups_25:1410209519669084184>\n" +
-                "https://www.roblox.com/es/communities/35983311\n"
+                "Random_Groups_49 <:Random_Groups_49:1438685066900406354> Nuevo Grupo Agregado 13 de Noviembre 📆\n"+
+                "https://www.roblox.com/es/communities/332829485 \n\n" +
+                "Random_Groups_46 <:Random_Groups_46:1429985427774767164> Nuevo Grupo Agregado 20 de Octubre 📆\n"+
+                 "https://www.roblox.com/es/communities/924449130\n"
             )
             .setColor("Green");
 
@@ -450,7 +437,7 @@ client.on(Events.MessageCreate, async (message) => {
         message.channel.send({ embeds: [embed] });
     }
 
-    // Panel Naranja
+    // Panel Naranja ARGENTINA
     if (message.content === ".p") {
         if (!message.member.roles.cache.some(r => r.name === "Staff")) {
             return message.reply("🚫 No tenés permiso para usar este comando.");
@@ -469,6 +456,106 @@ client.on(Events.MessageCreate, async (message) => {
 
         await message.channel.send({ embeds: [embed] });
     }
+    // Panel Naranja
+    if (message.content === ".") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+        try {
+            await message.delete();
+        } catch (err) {
+            if (err.code !== 10008) console.error(err);
+        }
+        }
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Alias", value: `\`\`\`inureshop\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`0000168300000004413370\`\`\``, inline: false },
+                { name: "Titular", value: "**Belen Roxana Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    // Panel Naranja
+    if (message.content === ".b") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+        try {
+            await message.delete();
+        } catch (err) {
+            if (err.code !== 10008) console.error(err);
+        }
+        }
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Alias", value: `\`\`\`inurebl\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`3840200500000040699956\`\`\``, inline: false },
+                { name: "Titular", value: "**Belen Roxana Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    // Panel Naranja
+    if (message.content === ",r") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+        try {
+            await message.delete();
+        } catch (err) {
+            if (err.code !== 10008) console.error(err);
+        }
+        }
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Alias", value: `\`\`\`inure.bj\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`0000168300000023562246\`\`\``, inline: false },
+                { name: "Titular", value: "**Benjamin Andres Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    // Panel Naranja
+    if (message.content === ",c") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+        try {
+            await message.delete();
+        } catch (err) {
+            if (err.code !== 10008) console.error(err);
+        }
+        }
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Alias", value: `\`\`\`inureca1\`\`\``, inline: false },
+                { name: "CVU", value: `\`\`\`3840200500000045483019\`\`\``, inline: false },
+                { name: "Titular", value: "**Ana Catalina Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
 
 // Panel nequi sam
     if (message.content === ",s") {
@@ -476,7 +563,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
 
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
 
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago")
@@ -495,7 +588,13 @@ client.on(Events.MessageCreate, async (message) => {
             return message.reply("🚫 No tenés permiso para usar este comando.");
         }
 
+        if (message.deletable) {
+    try {
         await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
 
         const embed = new EmbedBuilder()
             .setTitle("💳 Datos de pago")
@@ -503,6 +602,124 @@ client.on(Events.MessageCreate, async (message) => {
                 { name: "Clabe", value: `\`\`\`710969000052673049\`\`\``, inline: false },
                 { name: "Banco", value: "Nvio", inline: false },
                 { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+
+    if (message.content === "-m") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+    try {
+        await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Clabe", value: `\`\`\`706969215463563712\`\`\``, inline: false },
+                { name: "Banco", value: "Arcus", inline: false },
+                { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    if (message.content === "?o") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+    try {
+        await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
+
+        const embed = new EmbedBuilder()
+            .setTitle("Pago mediante Oxxo <:Oxxo:1420100086456913960>")
+            .addFields(
+                { name: "Numero de tarjeta", value: `\`\`\`4217470213285899\`\`\``, inline: false },
+                { name: "Titular", value: "**Sofia Evangelista Martinez**", inline: false }
+            )
+            .setDescription("Recorda que el pago tenes que hacerlo por **Spin By Oxxo**")
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+
+    if (message.content === ".d") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+    try {
+        await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "Email", value: `\`\`\`discorddexam@gmail.com\`\`\``, inline: false },
+                { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    if (message.content === ".j") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+    try {
+        await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "ID", value: `\`\`\`72699150\`\`\``, inline: false },
+                { name: "Titular", value: "**Mateo Valentin Lauman**", inline: false }
+            )
+            .setColor("Green");
+
+        await message.channel.send({ embeds: [embed] });
+    }
+    if (message.content === ".c") {
+        if (!message.member.roles.cache.some(r => r.name === "Staff")) {
+            return message.reply("🚫 No tenés permiso para usar este comando.");
+        }
+
+        if (message.deletable) {
+    try {
+        await message.delete();
+    } catch (err) {
+        if (err.code !== 10008) console.error(err);
+    }
+}
+
+        const embed = new EmbedBuilder()
+            .setTitle("💳 Datos de pago")
+            .addFields(
+                { name: "alias", value: `\`\`\`inureca\`\`\``, inline: false },
+                { name: "Titular", value: "**Ana Catalina Lauman**", inline: false }
             )
             .setColor("Green");
 
